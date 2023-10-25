@@ -1,67 +1,65 @@
-import { View, Text, TouchableHighlight, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  TouchableHighlight,
+  StyleSheet,
+  Image,
+} from "react-native";
 import React from "react";
 import ReclamManager from "./ReclamManager";
-import AlerteManager from "./AlerteManager";
 
-const ManagerAcceuil = ({ navigation }) => {
-  const handleAlerte = () => {
+const rapportImage = require("/Users/user/my-app - Copie (2)/my-app-f/assets/images/rapport.png");
+const settingImage = require("/Users/user/my-app - Copie (2)/my-app-f/assets/images/settings.png");
+const TechAcceuil = ({ navigation }) => {
+  const handleReclamBut = () => {
     // Action à exécuter lorsque le bouton est pressé
     console.log("Bouton pressé");
-    navigation.navigate("AlerteManager");
+    navigation.navigate("TechPage");
   };
-  const handleReclamManager = () => {
+  const handleHistoriqBut = () => {
     // Action à exécuter lorsque le bouton est pressé
     console.log("Bouton pressé");
-    navigation.navigate("ReclamManager");
+    navigation.navigate("Rapport");
   };
-  const handleRapports = () => {
-    // Action à exécuter lorsque le bouton est pressé
-    console.log("Bouton pressé");
-    navigation.navigate("ReclamManager");
-  };
+
   return (
     <View>
       <View>
         <TouchableHighlight
           style={styles.customButton}
           underlayColor="red" // Couleur de fond lorsque pressé
-          onPress={handleAlerte}
+          onPress={handleHistoriqBut}
         >
           <View style={styles.buttonContent}>
-            <Text style={styles.buttonText}></Text>
+            <Image source={rapportImage} style={styles.image} />
           </View>
         </TouchableHighlight>
-        <Text style={styles.text}>Alertes</Text>
-      </View>
-      <View>
-        <TouchableHighlight
-          style={styles.customButton}
-          underlayColor="red"
-          onPress={handleReclamManager}
-        >
-          <View style={styles.buttonContent}>
-            <Text style={styles.buttonText}></Text>
-          </View>
-        </TouchableHighlight>
-        <Text style={styles.text}>Liste des interventions</Text>
+        <Text style={styles.text}>Rapports</Text>
       </View>
       <View>
         <TouchableHighlight
           style={styles.customButton}
           underlayColor="red" // Couleur de fond lorsque pressé
-          onPress={handleRapports}
+          onPress={handleReclamBut}
         >
           <View style={styles.buttonContent}>
-            <Text style={styles.buttonText}></Text>
+            <Image source={settingImage} style={styles.image} />
           </View>
         </TouchableHighlight>
-        <Text style={styles.text}>Rapports</Text>
+        <Text style={styles.text}>Reclamations</Text>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  image: {
+    width: 50,
+    height: 50,
+    marginRight: 10,
+    marginLeft: 10,
+    alignItems: "center",
+  },
   text: {
     color: "#dc143c",
     fontSize: 14,
@@ -88,4 +86,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ManagerAcceuil;
+export default TechAcceuil;

@@ -11,9 +11,11 @@ import ReclamClient from "./src/screens/client/ReclamClient";
 import ManagerAcceuil from "./src/screens/manager/ManagerAcceuil";
 import TechPage from "./src/screens/technicien/TechPage";
 import TechForm from "./src/screens/technicien/TechForm";
+import Detailsrapp from "./src/components/Det";
 import { AuthContext } from "./src/context/AuthContext";
-import ScanQr from "./src/components/ScanQr";
 
+import ToDo from "./src/screens/technicien/Todo";
+import Rapport from "./src/screens/technicien/Rapport";
 const Stack = createStackNavigator();
 const App = () => {
   return (
@@ -22,7 +24,13 @@ const App = () => {
         <Stack.Screen name="logPage" component={LoginScreen}></Stack.Screen>
         <Stack.Screen name="TechPage" component={TechPage}></Stack.Screen>
         <Stack.Screen name="TechForm" component={TechForm}></Stack.Screen>
-        <Stack.Screen name="scanne" component={ScanQr}></Stack.Screen>
+        <Stack.Screen name="ToDo" component={ToDo}></Stack.Screen>
+        <Stack.Screen name="Rapport" component={Rapport}></Stack.Screen>
+        <Stack.Screen name="Detailsrapp" component={Detailsrapp}></Stack.Screen>
+        <Stack.Screen
+          name="ReclamManager"
+          component={ReclamManager}
+        ></Stack.Screen>
         <Stack.Screen
           name="ManagerAcceuil"
           component={ManagerAcceuil}
@@ -36,10 +44,7 @@ const App = () => {
           component={ReclamClient}
         ></Stack.Screen>
         <Stack.Screen name="TechAcceuil" component={TechAcceuil}></Stack.Screen>
-        <Stack.Screen
-          name="ReclamManager"
-          component={ReclamManager}
-        ></Stack.Screen>
+
         <Stack.Screen
           name="AlerteManager"
           component={AlerteManager}

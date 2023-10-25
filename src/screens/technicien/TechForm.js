@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Logout from "../../components/Logout";
 import {
   View,
   Text,
@@ -77,57 +78,65 @@ export default class TechForm extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.text}> FICHE TECHNICIEN</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Technicien"
-          value={this.state.field1}
-          onChangeText={(text) => this.handleNameChange("field1", text)}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Client"
-          value={this.state.field2}
-          onChangeText={(text) => this.handleClientChange("field2", text)}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Equipement"
-          value={this.state.field3}
-          onChangeText={(text) => this.handleEquipChange("field3", text)}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Nature panne"
-          value={this.state.field4}
-          onChangeText={(text) => this.handleNaturePanneChange("field4", text)}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Heure Debut"
-          value={this.state.field5}
-          onChangeText={(text) => this.handleHeureDebutChange("field5", text)}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Heure cloture"
-          value={this.state.field6}
-          onChangeText={(text) => this.handleHeureClotureChange("field6", text)}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Date "
-          value={this.state.field7}
-          onChangeText={(text) => this.handleDateChange("field7", text)}
-        />
-        <TouchableHighlight
-          style={styles.customButton}
-          underlayColor="red" // Background color when pressed
-          onPress={this.handleSubmit}
-        >
-          <Text style={styles.buttonText}>Clôturer</Text>
-        </TouchableHighlight>
+      <View>
+        <Logout></Logout>
+
+        <View style={styles.container}>
+          <Text style={styles.text}> FICHE TECHNICIEN</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Technicien"
+            value={this.state.field1}
+            onChangeText={(text) => this.handleNameChange("field1", text)}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Client"
+            value={this.state.field2}
+            onChangeText={(text) => this.handleClientChange("field2", text)}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Equipement"
+            value={this.state.field3}
+            onChangeText={(text) => this.handleEquipChange("field3", text)}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Nature panne"
+            value={this.state.field4}
+            onChangeText={(text) =>
+              this.handleNaturePanneChange("field4", text)
+            }
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Heure Debut"
+            value={this.state.field5}
+            onChangeText={(text) => this.handleHeureDebutChange("field5", text)}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Heure cloture"
+            value={this.state.field6}
+            onChangeText={(text) =>
+              this.handleHeureClotureChange("field6", text)
+            }
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Date "
+            value={this.state.field7}
+            onChangeText={(text) => this.handleDateChange("field7", text)}
+          />
+          <TouchableHighlight
+            style={styles.customButton}
+            underlayColor="red" // Background color when pressed
+            onPress={this.handleSubmit}
+          >
+            <Text style={styles.buttonText}>Clôturer</Text>
+          </TouchableHighlight>
+        </View>
       </View>
     );
   }

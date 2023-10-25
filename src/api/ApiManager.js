@@ -1,8 +1,10 @@
 import axios from "axios";
 
-const ApiManager = axios.create({
-  baseURL: "http://192.168.1.100:1414/api",
-  responseType: "json",
-  withCredentials: true,
-});
-export default ApiManager;
+export const fetchReclamData = async () => {
+  try {
+    const response = await apiService.get("http://127.0.0.1:3000"); // Remplacez par l'URL de votre endpoint
+    return response.data; // Les données sont extraites de l'API
+  } catch (error) {
+    throw error;
+  }
+};

@@ -1,8 +1,7 @@
-apply plugin: "com.android.application"
-apply plugin : "kotlin-android"
-apply plugin: "kotlin-android-extensions"
+apply plugin: "com.android.application";
+//apply plugin : "kotlin-android";
+//apply plugin: "kotlin-android-extensions" ;
 
-import com.android.build.OutputFile
 
 /**
  * The react.gradle file registers a task for each build variant (e.g. bundleDebugJsAndAssets
@@ -227,5 +226,5 @@ task copyDownloadableDepsToLibs(type: Copy) {
 }
 
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
- vos autres dépendances
-}
+vos autres dépendances
+

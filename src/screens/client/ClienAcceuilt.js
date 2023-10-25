@@ -1,54 +1,65 @@
-import { View, Text, TouchableHighlight, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  TouchableHighlight,
+  StyleSheet,
+  Image,
+} from "react-native";
 import React from "react";
 import ReclamClient from "./ReclamClient";
 
-const ClientAcceuil = ({ navigation }) => {
-  const handleAlerte = () => {
+const rapportImage = require("/Users/user/my-app - Copie (2)/my-app-f/assets/images/rapport.png");
+const settingImage = require("/Users/user/my-app - Copie (2)/my-app-f/assets/images/settings.png");
+const TechAcceuil = ({ navigation }) => {
+  const handleReclamBut = () => {
     // Action à exécuter lorsque le bouton est pressé
     console.log("Bouton pressé");
-    navigation.navigate("ReclamClient");
+    navigation.navigate("TechPage");
   };
-  const handleReclamManager = () => {
+  const handleHistoriqBut = () => {
     // Action à exécuter lorsque le bouton est pressé
     console.log("Bouton pressé");
-    navigation.navigate("ReclamClient");
+    navigation.navigate("Rapport");
   };
-  const handleRapports = () => {
-    // Action à exécuter lorsque le bouton est pressé
-    console.log("Bouton pressé");
-    navigation.navigate("ReclamClient");
-  };
+
   return (
     <View>
       <View>
         <TouchableHighlight
           style={styles.customButton}
           underlayColor="red" // Couleur de fond lorsque pressé
-          onPress={handleAlerte}
+          onPress={handleHistoriqBut}
         >
           <View style={styles.buttonContent}>
-            <Text style={styles.buttonText}></Text>
+            <Image source={rapportImage} style={styles.image} />
           </View>
         </TouchableHighlight>
-        <Text style={styles.text}>Réclamations</Text>
+        <Text style={styles.text}>Rapports</Text>
       </View>
       <View>
         <TouchableHighlight
           style={styles.customButton}
-          underlayColor="red"
-          onPress={handleReclamManager}
+          underlayColor="red" // Couleur de fond lorsque pressé
+          onPress={handleReclamBut}
         >
           <View style={styles.buttonContent}>
-            <Text style={styles.buttonText}></Text>
+            <Image source={settingImage} style={styles.image} />
           </View>
         </TouchableHighlight>
-        <Text style={styles.text}>Historique des interventions</Text>
+        <Text style={styles.text}>Reclamations</Text>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  image: {
+    width: 50,
+    height: 50,
+    marginRight: 10,
+    marginLeft: 10,
+    alignItems: "center",
+  },
   text: {
     color: "#dc143c",
     fontSize: 14,
@@ -61,7 +72,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#dc143c", // Couleur de fond du bouton
     justifyContent: "center", // Alignement vertical au centre
     alignItems: "center",
-    marginTop: 120,
+    marginTop: 80,
     marginLeft: 140, // Alignement horizontal au centre
   },
   buttonContent: {
@@ -75,4 +86,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ClientAcceuil;
+export default TechAcceuil;
